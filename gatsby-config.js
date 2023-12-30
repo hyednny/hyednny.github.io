@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `개발블로그`,
+    title: `개발 공부 블로그`,
     description: `개발 공부 블로그`,
     author: `hyejin`,
     siteUrl: 'https://hyednny.github.io/',
