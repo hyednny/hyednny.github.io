@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `개발 공부 블로그`,
+    title: `Hyednny DevBlog`,
     description: `개발 공부 블로그`,
-    author: `hyejin`,
+    author: `Hyednny`,
     siteUrl: 'https://hyednny.github.io/',
   },
   plugins: [

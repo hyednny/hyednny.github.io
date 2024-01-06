@@ -2,7 +2,7 @@
 date: '2022-12-13'
 title: '호이스팅(Hoisting)이란 무엇인가?'
 categories: ['Web', 'Javascript']
-summary: '호이스팅의 개념에 대하여 작성'
+summary: '호이스팅의 개념'
 thumbnail: './hoisting.png'
 ---
 

@@ -38,7 +38,7 @@ const Footer: FunctionComponent = function () {
   return (
     <FooterComponent>
       <FooterContent>
-        <Content1>Developer HyeJin</Content1>
+        <Content1>Developer Hyednny</Content1>
         <ContentCopyRight>© 2022. hyednny all rights reserved.</ContentCopyRight>
       </FooterContent>
     </FooterComponent>
