@@ -1,6 +1,6 @@
 ---
 date: '2023-02-02'
-title: '콜백 지옥 해결 방법 Promise, async/await'
+title: '비동기 처리 방법 Promise, async/await'
 categories: ['Web', 'Javascript']
 summary: 'Promise, async/await'
 thumbnail: './promise.png'
