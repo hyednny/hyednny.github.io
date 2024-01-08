@@ -1,5 +1,5 @@
 ---
-date: '2023-06-14'
+date: '2022-12-14'
 title: 'Optional Chaining'
 categories: ['Javascript']
 summary: 'Optional Chaining 사용법'
