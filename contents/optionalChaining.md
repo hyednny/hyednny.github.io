@@ -9,7 +9,7 @@ thumbnail: './optionalChaining.png'
 ### Optional Chaining
 
 선택적 체이닝 연산자 (?.) </br></br>
-체인 중간에 속성이나 메서드가 존재하지 않을 때 (null 또는 undefined) 발생하는 에러를 방지하고 undefined를 반환한다.
+체인 중간에 속성이나 메서드가 존재하지 않을 때 (null 또는 undefined) 발생하는 에러를 방지하고 undefined를 반환합니다.
 </br></br>
 null : 변수 선언을 하고 빈 값을 할당한 상태(빈 객체) </br>
 undefined : 변수를 선언하고 값을 할당하지 않은 상태
@@ -24,7 +24,7 @@ const personCity = person.address?.city
 console.log(personCity) // 출력 => undefined
 ```
 
-중첩된 구조에서도 사용 가능 예시는 아래와 같다.
+중첩된 구조에서도 사용 가능 예시는 아래와 같습니다.
 
 ```javascript
 const customer = {

@@ -1,15 +1,15 @@
 ---
 date: '2022-12-30'
 title: 'Oauth2 개념과 트위터 Oauth2 사용'
-categories: ['Web']
+categories: []
 summary: 'Oauth2 개념과 트위터 Oauth2 사용법'
 thumbnail: './oauth2.png'
 ---
 
 ### Oauth2 이란?
 
-Oauth 2.0 은 **Open Authorization 2.0** 로 인증을 위한 개방향 표준 프로토콜이다.</br>
-인터넷 사용자들이 비밀번호를 제공하지 않고 다른 웹사이트 상의 자신들의 정보에 대해 웹사이트나 애플리케이션의 접근 권한을 부여할 수 있는 공통적인 수단으로서 사용되는 접근 위임을 위한 개방형 표준이다.
+Oauth 2.0 은 **Open Authorization 2.0** 로 인증을 위한 개방향 표준 프로토콜입니다.</br>
+인터넷 사용자들이 비밀번호를 제공하지 않고 다른 웹사이트 상의 자신들의 정보에 대해 웹사이트나 애플리케이션의 접근 권한을 부여할 수 있는 공통적인 수단으로서 사용되는 접근 위임을 위한 개방형 표준입니다.
 
 ### 용어 정리
 
@@ -42,19 +42,19 @@ Oauth 2.0 은 **Open Authorization 2.0** 로 인증을 위한 개방향 표준 �
       clientSecret: config.get < string > 'TWITTER_CLIENT_SECRET',
     })
     ```
-    a. state, codeVerifier, url 을 가져옴
+    a. state, codeVerifier, url 을 가져옵니다
     ```javascript
     const { state, codeVerifier, url } = TWITTER_CLIENT.generateOAuth2AuthLink(
       `${API_ENDPOINT}/v1/referral/callback/twitter`,
       { scope: ['users.read', 'tweet.read'] },
     )
     ```
-    b. redis에 codeVerifier 데이터를 저장함
+    b. redis에 codeVerifier 데이터를 저장합니다
     ```javascript
     await this.redis.set(`${capitalize(type)}_${state}`, data, minutesToSeconds(10))
     ```
 3.  Callback</br>
-    a. redis에 저장되어있던 Twitter\_${state} 를 가져와서 redis에 데이터가 있는지 체크해줌
+    a. redis에 저장되어있던 Twitter\_${state} 를 가져와서 redis에 데이터가 있는지 체크해줍니다
 
     ```javascript
     const data = await this.redis.get<Record<string, string>>(`Twitter_${state}`)

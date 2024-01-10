@@ -1,7 +1,7 @@
 ---
 date: '2022-12-13'
 title: '호이스팅(Hoisting)이란 무엇인가?'
-categories: ['Web', 'Javascript']
+categories: ['Javascript']
 summary: '호이스팅의 개념'
 thumbnail: './hoisting.png'
 ---
@@ -15,9 +15,9 @@ console.log(a) // undefined
 var a = 'A' // var 변수
 ```
 
-var a 를 상단으로 호이스팅했기 때문에 변수 선언전에 console 을 출력해도 에러가 발생하지 않는다.
+var a 를 상단으로 호이스팅했기 때문에 변수 선언전에 console 을 출력해도 에러가 발생하지 않습니다.
 
-모든 선언(function, var, let, const, class) 은 javaScript 에서 호이스팅되며, var 선언은 undefined로 초기화되지만 let과 const 선언은 초기화 되지 않은 Temporal Dead Zone 상태로 유지한다.
+모든 선언(function, var, let, const, class) 은 javaScript 에서 호이스팅되며, var 선언은 undefined로 초기화되지만 let과 const 선언은 초기화 되지 않은 Temporal Dead Zone 상태로 유지합니다.
 
 ```javascript
 // 함수 선언식
@@ -28,7 +28,7 @@ function hoisted() {
 }
 ```
 
---> 함수 선언식 호이스팅 가능하다.
+--> 함수 선언식 호이스팅 가능합니다.
 
 ```javascript
 // 함수 표현식
@@ -39,6 +39,6 @@ var expression = function () {
 }
 ```
 
---> 함수 표현식 호이스팅 불가능하다.
+--> 함수 표현식 호이스팅 불가능합니다.
 
-호이스팅을 의도적으로 사용하는 경우가 아니라면 호이스팅이 되지 않거나, Temporal Dead Zone 으로 초기화 되는 let, const, 함수 표현식을 사용하는 것을 권장한다.
+호이스팅을 의도적으로 사용하는 경우가 아니라면 호이스팅이 되지 않거나, Temporal Dead Zone 으로 초기화 되는 let, const, 함수 표현식을 사용하는 것을 권장합니다.

@@ -18,7 +18,7 @@ and the repository exists.
 ```
 
 이유는 git@github.com 에 연결된 ssh key가 설정되어 있지 않아서 </br>
-ssh key를 만들고 github의 본인 계정에 등록해주면 된다.
+ssh key를 만들고 github의 본인 계정에 등록해주면 됩니다.
 
 ### ssh-key 만드는 방법
 
