@@ -1,7 +1,7 @@
 ---
 date: '2024-01-10'
 title: 'Sequelize로 DB 세팅'
-categories: ['Javascript', 'Sequelize']
+categories: ['Javascript', 'Sequelize', 'Project']
 summary: 'Node.js Sequelize'
 thumbnail: './sequelize.png'
 ---
@@ -28,7 +28,8 @@ ORM이라고 하는데 Object Relational Mapping 객체와 관계적인 매핑, 
 3. config.json 수정하기 </br>
    데이터베이스를 사용하는데 필요한 정보를 저장해두는 곳입니다.</br>
    그러나 json파일은 모듈을 불러오고 사용하는 것이 불가능하기 때문에</br>
-   dotenv 모듈을 불러와서 사용하려면 해당 파일을 config.js나 config.ts로 바꾸고 수정해야합니다.
+   dotenv 모듈을 불러와서 사용하려면 해당 파일을 config.js나 config.ts로 바꾸고 수정해야합니다.</br>
+   sequelize를 사용하기 위한 환경 설정입니다.
 
 ```javascript
 require('dotenv').config()
@@ -53,20 +54,28 @@ module.exports = {
 ```
 
 4. models 안에 index.js 수정하기</br>
+   sequelize-typescript로 연결
 
 ```typescript
-import { Sequelize } from 'sequelize'
+import { Sequelize } from 'sequelize-typescript'
 import config from 'config'
+import { User } from './user'
 
 const database = config.get<string>('DATABASE')
 const username = config.get<string>('DB_USERNAME')
 const password = config.get<string>('DB_PASSWORD')
 
 export const sequelize = new Sequelize(database, username, password, {
-  host: config.get<string>('DB_HOST'),
   dialect: 'mysql',
   timezone: config.get<string>('DB_TIMEZONE'),
-  dialectOptions: { ssl: {} },
+  replication: {
+    read: [
+      { host: config.get<string>('DB_HOST'), username, password },
+      { host: config.get<string>('DB_HOST'), username, password },
+    ],
+    write: { host: config.get<string>('DB_HOST'), username, password },
+  },
+  models: [User],
   pool: {
     max: 5,
     min: 0,
@@ -87,11 +96,7 @@ export const sequelize = new Sequelize(database, username, password, {
 ...
   timezone: config.get<string>('DB_TIMEZONE'),
   dialectOptions: { ssl: {rejectUnauthorized: true } }, //추가
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000,
-  },
+...
 }
 
 ```
