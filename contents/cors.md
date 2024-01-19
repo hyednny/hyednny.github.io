@@ -158,4 +158,4 @@ CORS 설정에서 allowedHeaders에 Content-Type, Authorization 등 이 헤더�
 
 - https://escapefromcoding.tistory.com/724
 - https://surprisecomputer.tistory.com/32
-- https://velog.io/@garcon/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-CORS%EC%99%80-credentials
+- [Credentialed Request 참고](https://velog.io/@garcon/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-CORS%EC%99%80-credentials)
